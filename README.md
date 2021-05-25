@@ -1,2 +1,3 @@
-# Ola mundo
- primeiro reposit[orio remoto
+# Olá, mundo.
+ primeiro repositorio remoto
+ estou estudando
