@@ -19,13 +19,27 @@ se você colocar três linhas ou asterisco, como essas (-)ou(*) , vai fazer uma 
 negrito e itálico misturado __*teste*__ *teste* teste **teste**
 1. casa
 2. escola
- 3. casa
- 4. escola
+3. casa
+4. escola
 5. beterraba
 6. matemática
 
 * teste
+  * teste
 * teste
-* teste
- *  teste
+  *  teste(precisa de dois espaços)
 *  
+ou 
+- teste
+- teste
+- teste
+  - teste
+
+
+- [x] teste
+
+- [] teste
+
+- [] teste
+
+- [] teste
