@@ -1,3 +1,4 @@
+
 # Olá, mundo.
  _**primeiro repositorio remoto**_
  
@@ -42,4 +43,19 @@ ou
 
 - [] teste
 
-- [] teste
+- [] teste.
+
+[acesse meu github](https://github.com/Pauloalbuquerque21)
+
+teste|teste|teste
+---|---|---
+1|2|3
+2|3|5
+
+
+
+
+
+'''
+int(input('escola legal)
+'''
