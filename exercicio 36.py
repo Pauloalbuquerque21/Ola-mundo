@@ -8,5 +8,6 @@ if n4 <= n5:
     print(f'30% do salario{n5},Parcela{n4:.2f}')
 else:
     print('Não podemos te conseder esse emprestimo.')
+    print(f'30% do salario{n5},Parcela{n4:.2f}')
 
 #print(f'{n1},{n2},{n3},{n4:.2f}')
