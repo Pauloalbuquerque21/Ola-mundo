@@ -32,4 +32,3 @@ else:
 if n2 == n1:
     print('Empate')
 
-
