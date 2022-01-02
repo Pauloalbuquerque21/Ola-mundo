@@ -1,11 +1,24 @@
 from time import sleep
 import random
-list = ('PEDRA','PAPEL')
-
-
-
-
-
+list = ('PEDRA','PAPEL','TESOURA')
+n2 = random.choice(list)
+n1 = int(input('Suas opções:\n[0]PEDRA\n[1]PAPEL\n[2]TESOURA\nQual é a sua jogada?'))
+print('JO')
+sleep(1)
+print('KEN')
+sleep(1)
+print('PO!!!')
+sleep(1)
+print('-=-'*20)
+print(f'O jogador escolheu {list[n1]}')
+print(f'A maquina escolheu {n2}')
+print('-=-'*20)
+if n2 == 0:
+    if n1 == 0:
+        print('Empate')
+    elif n1 == 1:
+        print('O jogador ganhou')
+    
 
 
 
