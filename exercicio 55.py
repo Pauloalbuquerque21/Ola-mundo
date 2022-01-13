@@ -1,6 +1,3 @@
-from termios import NL1
-
-
 maior = 0
 menor = 0
 for c in range(1,6):
