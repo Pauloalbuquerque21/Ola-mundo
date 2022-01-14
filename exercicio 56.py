@@ -15,3 +15,5 @@ print(f'{soma}')
 print(f'A média de idade do grupo é de {n4:.2f} anos')
 print(f'Ao todo são {soma2} mulheres com menos de 20 anos')
 print(f'Idade maior{maior} é a pessoa {nome}')
+
+print('teste')
