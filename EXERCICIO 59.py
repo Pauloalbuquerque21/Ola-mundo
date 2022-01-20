@@ -25,6 +25,7 @@ while n3 != 5:
         elif n1 == n2:
             print('-=-'*20)
             print(f'O primeiro número é {n1} e segundo {n2} são iguais')
+            print('-=-'*20)
 
 
 
