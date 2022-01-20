@@ -15,17 +15,16 @@ while n3 != 5:
         print('-=-'*20)
     elif n3 == 3:
         if n1 > n2 :
-            print('-=-'*20)
-            print(f'O primeiro número é {n1} e segundo {n2} o maior {n1}')
-            print('-=-'*20)
-        elif n2 < n1:
-            print('-=-'*20)
-            print(f'O primeiro número é {n1} e segundo {n2} o maior {n2}')
-            print('-=-'*20)
-        elif n1 == n2:
-            print('-=-'*20)
-            print(f'O primeiro número é {n1} e segundo {n2} são iguais')
-            print('-=-'*20)
+            maior = n1
+        elif n1 < n2:
+            maior = n2
+        print(f'O primeiro número é {n1} e segundo {n2} o maior é {maior}')
+    elif n3 == 4:
+        n1 = int(input('Digite o primeiro número:'))
+        n2 = int(input('Digite o segundo número:'))
+    elif n3 == 5:
+        print('Finalizando.....')
+
 
 
 
