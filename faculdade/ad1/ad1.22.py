@@ -1,48 +1,32 @@
 def le_produto():
-    """
-    Lê da entrada padrão as informações de um produto e retorna um dicionário com essas informações.
-    """
-    linha = input().strip()
-    if linha == "":
-        return None
-    codigo, descricao, quantidade, preco = linha.split("#")
-    produto = {"codigo": codigo, "descricao": descricao, "quantidade": int(quantidade), "preco": float(preco)}
-    return produto
+    lista_produtos = []
+    while True:
+        linha = input().strip()
+        if linha == '':
+            break
+        produto = tuple(linha.split('#'))
+        produto = (produto[0], produto[1], int(produto[2]), float(produto[3]))
+        lista_produtos.append(produto)
+    return lista_produtos
 
-def busca_produto(codigo, lista_produtos):
-    """
-    Busca um produto na lista de produtos pelo seu código.
-    Retorna o dicionário com as informações do produto, caso seja encontrado, ou None, caso contrário.
-    """
-    for produto in lista_produtos:
-        if produto["codigo"] == codigo:
-            return produto
+def encontra_produto(lista_produtos, codigo_produto):
+    for i in range(len(lista_produtos)):
+        if codigo_produto == lista_produtos[i][0]:
+            return lista_produtos[i]
     return None
 
 def main():
-    # Lê a lista de produtos
-    lista_produtos = []
+    lista_produtos = le_produto()
     while True:
-        produto = le_produto()
-        if produto is None:
+        codigo_produto = input().strip()
+        if codigo_produto == '':
             break
-        lista_produtos.append(produto)
-
-    # Busca de produtos
-    while True:
-        codigo = input("Digite o código do produto (ou vazio para sair): ").strip()
-        if codigo == "":
-            break
-        produto = busca_produto(codigo, lista_produtos)
-        if produto is None:
-            print("Produto não encontrado!")
+        produto = encontra_produto(lista_produtos, codigo_produto)
+        if produto == None:
+            print(f"Código {codigo_produto} não localizado na lista de produtos!!!")
         else:
-            print("Código:", produto["codigo"])
-            print("Descrição:", produto["descricao"])
-            print("Quantidade:", produto["quantidade"])
-            print("Preço:", produto["preco"])
-
+            print("Produto localizado:", produto)
     print("Obrigado por utilizar nosso sistema!!!")
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
