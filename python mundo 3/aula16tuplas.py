@@ -1,7 +1,8 @@
-lanche = ('Hambúrguer','Suco','Pizza','Pudim', 'Batata Frita')
-
-for cont in range(0,len(lanche)):
-    print(f'Eu vou comer {lanche[cont]}')
-
-for comida in lanche:
-    print(f'Eu vou comer {comida}')
+entrada = 0
+while True:
+    entrada = int(input('Digite um valor entre 0 e 20:'))
+    if entrada == 11:
+        break
+    else:
+        a = ('Zero','Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez', 'Onze', 'Doze', 'Treze', 'Catorze', 'Quinze', 'Dezesseis', 'Dezessete','Dezoito','Dezenove','Vinte')
+        print(f'O valor digitado é {a[entrada]}')
