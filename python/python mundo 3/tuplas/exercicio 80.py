@@ -1,25 +1,16 @@
-valores = list()
+lista = []
 for c in range(0,5):
-    n1 = int(input('Digite um valor:'))
-    if len(valores) == 0:
-        valores.append(n1)
-        print('Primeiro valor adicionado...')
+    n = int(input('Digite um valor:'))
+    if c == 0 or n > lista[-1]:
+        lista.append(n)
+        print('Adicionado ao final da lista...')
     else:
-        if valores[0] > n1:
-            valores.insert(0,n1)
-            print('Adicionado na posição 0')
-        else:
-            if valores[1] > n1 or len(valores)==1:
-                valores.insert(1,n1)
-                print('Adicionado na posição 1')
-            if valores[2] > n1 and len(valores) == 2:
-                valores.insert(2,n1)
-                print('Adicionado na posição 2')
-            if valores[3] > n1 and len(valores)==3:
-                valores.insert(3,n1)
-                print('Adicionado na posição 3')
-            if valores[4] > n1 and len(valores) == 4:
-                valores.insert(4,n1)
-                print('Adicionado na posição 4')
-
-print(f'Os valores cadastrados são {valores}')
+        pos = 0 
+        while pos < len(lista):
+            if n <= lista[pos]:
+                lista.insert(pos, n)
+                print(f'Adicionado na posição {pos}')
+                break
+            pos += 1
+print('-='*30)
+print(f'Os valores digitados em ordem forem {lista}')
