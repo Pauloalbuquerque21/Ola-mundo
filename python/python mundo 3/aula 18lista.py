@@ -29,3 +29,4 @@ for p in galera:
         totmen += 1 
 
 print(f'Temos {totmai} maiores e {totmen} menores de idade')
+print(galera)
