@@ -7,6 +7,8 @@ for c in range(0,7):
         dados[0].append(valores)
     elif valores % 2 != 0:
         dados[1].append(valores)
+#dados[0].sort()
+#dados[1].sort()
 
 print(f'PARES : {sorted(dados[0])}')
 print(f'Impares: {sorted(dados[1])}')
