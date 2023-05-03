@@ -1,7 +1,6 @@
 from time import sleep
 import random
 lista = []
-random.choice(lista)
 for c in range(0,100):
     lista.append(c)
 aut = random.choice(lista)
@@ -10,9 +9,11 @@ print('JOGA NA MEGA SENA')
 print('-'*15)
 quant = int(input('QUnatos jogos você quer que eu sorteie?'))
 
-print('-=-=-=-=-= SORTEANDO 5 JOGOS -=-=-=-=-=')
+print(f'-=-=-=-=-= SORTEANDO {quant} JOGOS -=-=-=-=-=')
 for c in range(0,quant):
-    print(f'Jogo {c}: {aut}')
+    print(f'\nJogo {c+1}:',end='')
+    for c in range(0,6):
+        n1 = random.choice(lista)
+        print(f'[{n1:^3}]',end='')
     sleep(1)
-print('-=-=-=-=-= < BOA SORTE! > -=-=-=-=-=')
-print(aut)
+print('\n-=-=-=-=-= < BOA SORTE! > -=-=-=-=-=')
