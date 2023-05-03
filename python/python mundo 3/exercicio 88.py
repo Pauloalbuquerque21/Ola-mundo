@@ -16,4 +16,4 @@ for c in range(0,quant):
         n1 = random.choice(lista)
         print(f'[{n1:^3}]',end='')
     sleep(1)
-print('\n-=-=-=-=-= < BOA SORTE! > -=-=-=-=-=')
+#print('\n-=-=-=-=-= < BOA SORTE! > -=-=-=-=-=')
