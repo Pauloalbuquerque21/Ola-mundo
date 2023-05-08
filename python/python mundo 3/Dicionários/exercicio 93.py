@@ -13,3 +13,11 @@ inf['Total'] = resul
 print('-='*30)
 print(f'{inf}')
 print('-='*30)
+print(f'O campo nome tem o valor {inf["nome"]}')
+print(f'O campo gols tem o valor {inf["gols"]}')
+print(f'O campo total tem o valor {inf["Total"]}')
+print(f'-='*30)
+print(f'O jogador {inf["nome"]} jogou 5 partidas.')
+for c in range(0,quant):
+    print(f'=> Na partida {c}, fez {inf["gols"][c]} gols.')
+print(f'Foi um Total de {inf["Total"]} gols')
