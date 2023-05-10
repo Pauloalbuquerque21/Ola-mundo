@@ -18,7 +18,8 @@ while True:
             print('Errado')
     inf["nome"].append(nome)
     inf["sexo"].append(sexo)
-    inf['idade'].append()
+    inf['idade'].append(idade)
+    
     if alt in 'nN':
         break
 print(f"{inf}")
