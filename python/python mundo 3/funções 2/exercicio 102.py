@@ -1,19 +1,29 @@
-def fatorial(a,show=0):
-    """
-    a = O valor fo fatorial
-    show = Você tem a opção de deixar False or True, sendo que False é para não permitir que apareça os multiplos do resultado em fatorial. 
+#def fatorial(a,show=0):
+    #res = 1 
+    #if show == True:
+    #    for c in range(a,0,-1):
+    #        print(f'{c}',end=' ')
+    #        
+    #        res *= c
+    #    print('=',end=' ')
+    #else:
+    #    for c in range(a,0,-1):
+    #        res *= c
+    #return res
 
-    """
-    res = 1 
-    if show == True:
-        for c in range(a,0,-1):
-            print(f'{c}',end=' ')
-            
-            res *= c
-        print('=',end=' ')
-    else:
-        for c in range(a,0,-1):
-            res *= c
-    return res
+#print(f'{fatorial(5)}')
+#help(fatorial)
 
-print(f'{fatorial(5,False)}')
+def fatorial(n,show=False):
+    f = 1
+    for c in range(n,0,-1):
+        if show:
+            print(c, end='')
+            if c > 1:
+                print('x', end='')
+            else:
+                print('=',end='')
+        f*=c
+    return f
+
+print(fatorial(5,show=False))
