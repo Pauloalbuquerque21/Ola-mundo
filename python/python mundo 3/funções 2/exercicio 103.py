@@ -1,11 +1,27 @@
 dados = list()
 jogador = str(input('Nome do jogador:'))
-if len(jogador) == 0:
-    dados = '<Desconhecido>'
-else:
-    dados.append(jogador)
 gols = str(input('Número de GOls:'))
-dados.append(gols)
 
+
+def jog(a=0):
+    infjog = 0
+    if a == 0:
+        infjog ='<Desconhecido>'
+    else:
+        infjog = a
+    return infjog
+def gol(b=0):
+    infgol = 0 
+    if b == 0:
+        infgol = 0
+    else:
+        infgol = b
+    return infgol
+
+
+dados.append(jog(jogador))
+dados.append(gol(gols))
 print(f'{dados}')
 
+
+    
