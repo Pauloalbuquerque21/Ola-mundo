@@ -1,7 +1,7 @@
 
 
 def leiaInt(a=0):
-
+ 
     if len(a) == 0:
         print('ERRO! Digite um número inteiro válido.')
     else:
