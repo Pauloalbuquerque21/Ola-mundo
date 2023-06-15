@@ -25,8 +25,8 @@
 
 #print(f'O jogador {dados[0]} fez gols(s) no compeonato')
 
-def ficha(job="Desconhecido", gol = 0):
-    print(f'O gador {jog} fez {gol} gol(s) no compeonato')
+def ficha(jog="Desconhecido", gol = 0):
+    print(f'O gadoror {jog} fez {gol} gol(s) no compeonato')
 
 #Programa principal
 n = str(input('Nome do jogador:'))
