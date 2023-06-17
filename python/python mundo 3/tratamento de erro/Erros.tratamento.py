@@ -5,7 +5,6 @@ try:
 except Exception as erro:
     print(f'Problema encontrado, foi {erro.__class__}')
 except ZeroDivisionError:
-    print('')
 else:
     print(f'O resultado é {n3}')
 finally:
