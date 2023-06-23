@@ -1,5 +1,11 @@
-    
-a = int(input('Digite um valor:'))
+def leiaint(a):
+    while True:
+        try:
+            
+
+
+
+int = leiaint('Digite um valor:')
 
 
 
