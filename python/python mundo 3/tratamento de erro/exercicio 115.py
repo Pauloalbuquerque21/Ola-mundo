@@ -12,4 +12,4 @@ while True:
         break
     else:
         print('Erro! Digite uma opção válida')
-    sleep(2)
+    sleep(2) 
