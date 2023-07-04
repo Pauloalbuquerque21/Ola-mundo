@@ -9,8 +9,7 @@ if not arquivo.arquivoExiste(arq):
 while True:  
     resposta = opções.menu(['Ver pessoas cadastradas','Cadastrar nova Pessoa','Sair do sistema'])
     if resposta == 1:
-        #c
-        arquivo.lerArquivo('Opção 1')
+        opções.cabeçalho('Opção 1')
     elif resposta == 2:
         opções.cabeçalho('Opção 2')
     elif resposta == 3:
