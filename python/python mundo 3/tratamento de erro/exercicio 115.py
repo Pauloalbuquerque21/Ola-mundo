@@ -1,6 +1,7 @@
 from ex115.opções import opções
 from ex115.arquivo import arquivo
 from time import sleep
+
 arq = 'cursoemvideo.txt'
 
 if not arquivo.arquivoExiste(arq):
@@ -8,7 +9,8 @@ if not arquivo.arquivoExiste(arq):
 while True:  
     resposta = opções.menu(['Ver pessoas cadastradas','Cadastrar nova Pessoa','Sair do sistema'])
     if resposta == 1:
-        opções.cabeçalho('Opção 1')
+        #c
+        arquivo.lerArquivo('Opção 1')
     elif resposta == 2:
         opções.cabeçalho('Opção 2')
     elif resposta == 3:

@@ -1,3 +1,4 @@
+from ex115.opções import opções
 
 def arquivoExiste(nome):
     try:
@@ -23,5 +24,5 @@ def criarArquivo(nome):
         except:
             print('Erro ao ler o arquivo')
         else:
-            cabeçalho('PESSOAS CADASTRADAS')
+            opções.cabeçalho('PESSOAS CADASTRADAS')
             print(a.read())
