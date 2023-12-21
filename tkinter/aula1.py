@@ -10,7 +10,24 @@ class funções():
         self.nome_entry.delete(0,END)
         self.fone_entry.delete(0,END)
         self.cidade_entry.delete(0,END)
-    def conecta_bd():
+    def conecta_bd(self):
+        self.conn = sqlite3.connect('Cliente.bd')
+        self.cursor = self.conn.cursor()
+    def desconecta_bd(self):
+        self.conn.close()
+    def montaTabelas(self):
+        self.conecta_bd(); print('Conectando ao banco de dados')
+        ### Criar tabela
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS clientes(
+                cod INTERGER PRIMARY KEY,
+                nome_cliente CHAR(40) NOT NULL,
+                telefone INTERGER(20),
+                cidade CHAR(40)                
+            );
+        """)
+        self.conn.commit();print('Banco de dados criado')
+        self.desconecta_bd()
 
 class Application(funções):
     def __init__(self):
@@ -19,6 +36,7 @@ class Application(funções):
         self.frames_da_tela()
         self.widgets_frame1()
         self.lista_frame2()
+        self.montaTabelas()
         root.mainloop()
     def tela(self):
         self.root.title("Cadatri de Clientes")
