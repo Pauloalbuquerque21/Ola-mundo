@@ -17,6 +17,7 @@ class BaseDeDados:
     def lista_clientes(self):
         for id, nome in self.dados['clientes'].items():
             print(id,nome)
+             
     def apagar_cliente(self,id):
         del self.dados['clientes'][id]
 
