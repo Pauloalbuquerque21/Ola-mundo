@@ -1,7 +1,9 @@
-from AULA_CLASS_11 import pessoa
+from AULA_CLASS_11 import Person
 
-p1 = pessoa(nome='carlos',idade= 11)
-p2 = pessoa(nome='carlos',idade = 11)
 
-p1.print()
-print(p1 == p2)
+john1 = Person('John', 'Doe')
+john2 = Person('John1','Doe')
+mary = Person('Mary','Jane')
+print(' == )
+
+print(p1)
