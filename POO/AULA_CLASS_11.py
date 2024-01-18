@@ -20,9 +20,8 @@ class Person:
         name: str
         lastname: str
     
-    if __name__ == '__main__':
-        john1 = Person('John', 'Doe')
-        john2 = Person('John1','Doe')
-        mary = Person('Mary','Jane')
-        print(' == )
+if __name__ == '__main__':
+    john1 = Person('John', 'Doe')
+    john2 = Person('John1','Doe')
+    mary = Person('Mary','Jane')
     
