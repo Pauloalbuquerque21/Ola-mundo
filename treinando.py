@@ -1,10 +1,19 @@
-contatos = {
-"guilherme@gmail.com": {"nome": "Guilherme", "telefone": "3333-2221"},
-"giovanna@gmail.com": {"nome": "Giovanna", "telefone": "3443-2121"},
-"chappie@gmail.com": {"nome": "Chappie", "telefone": "3344-9871"},
-"melaine@gmail.com": {"nome": "Melaine", "telefone": "3333-7766"},
-}
+class Pessoa:  # Note que alterei o nome da classe para seguir a convenção de nomes em Python (iniciar com letra maiúscula)
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self._idade = idade
 
-for chave,  valor in contatos.items():
-    print(chave, valor)
+    def informa(self):
+        print(f'Nome {self.nome} e idade {self.get_idade()+1}.')  # Corrigido aqui
 
+    def get_idade(self):
+        return self._idade
+    
+    def set_idade(self, novo_valor):
+        if isinstance(novo_valor, str):
+            novo_valor = int(novo_valor)
+        self._idade = novo_valor
+
+# Criando uma instância da classe e chamando o método informa
+p1 = Pessoa('carlos', '15')
+p1.informa()
