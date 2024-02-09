@@ -10,6 +10,7 @@ class dado():
 
 p1 = dado(1,2)
 p2 = dado(2,3)
+p3 = dado(3,4)
 
-resultado = p1 + p2
+resultado = p1 + p2 + p3
 print(resultado)
