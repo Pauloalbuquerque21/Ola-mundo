@@ -1,6 +1,6 @@
 try:
     try:
-        x = eval(input("Entre com um numero: "))
+        x = int(input("Entre com um numero: "))
         print (x)
     finally:
         print ("Fazendo x igual ao valor default None")
