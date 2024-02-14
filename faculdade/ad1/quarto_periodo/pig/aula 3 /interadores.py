@@ -17,7 +17,7 @@ class dados:
 
 teste = dados(10)
 
-for c in 10:
+for c in teste  :
     print(c)
 
 
