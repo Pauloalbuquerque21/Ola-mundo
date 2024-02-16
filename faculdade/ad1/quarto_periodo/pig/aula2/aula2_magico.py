@@ -7,6 +7,9 @@ class dado():
         return f'{self.a},{self.b}'
     def __add__(self,other):
         return f'{self.a+other.a}, {self.b + other.b}'
+    def __mul__(self,other):
+        return f'{self.a * other.a},{self.b * other.b}'
+    
 
 p1 = dado(1,2)
 p2 = dado(2,3)
@@ -14,3 +17,4 @@ p3 = dado(3,4)
 
 resultado = p1 + p2
 print(resultado)
+print(p1)

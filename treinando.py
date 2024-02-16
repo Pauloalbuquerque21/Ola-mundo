@@ -1,19 +1,24 @@
-class Pessoa:  # Note que alterei o nome da classe para seguir a convenção de nomes em Python (iniciar com letra maiúscula)
-    def __init__(self, nome, idade):
-        self.nome = nome
-        self._idade = idade
+a = 10
+b = 4
+lista = list()
+for c in range(2,10):    
+    while True:
+        if (a % c == 0) or (b % c == 0):
+            if a % c == 0:
+                a = a / c
+                print(a)
+            if b % c == 0:
+                print(b) 
+                b = b / c
+            lista.append(c)
+        else:
+            break
+mmc = 1
+for dados in lista:
+    mmc = mmc * dados
 
-    def informa(self):
-        print(f'Nome {self.nome} e idade {self.get_idade()+1}.')  # Corrigido aqui
 
-    def get_idade(self):
-        return self._idade
-    
-    def set_idade(self, novo_valor):
-        if isinstance(novo_valor, str):
-            novo_valor = int(novo_valor)
-        self._idade = novo_valor
 
-# Criando uma instância da classe e chamando o método informa
-p1 = Pessoa('carlos', '15')
-p1.informa()
+
+print(lista)
+print(mmc)
