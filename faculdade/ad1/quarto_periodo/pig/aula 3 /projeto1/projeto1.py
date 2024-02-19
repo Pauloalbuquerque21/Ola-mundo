@@ -22,10 +22,10 @@ class franc():
         mmc = 1
         for dados in lista:
             mmc = mmc * dados
-        self.numerador = self.numerador * (mmc / self.numerador)
-        other.numerador = other.numerador * (mmc / self.numerador)
+        self.numerador = self.numerador * (mmc / self.denominador)
+        other.numerador = other.numerador * (mmc / self.denominador)
         
-        return lista
+        return f'{(self.numerador+other.numerador)} /{mmc}'
     #def __iadd__(self,other):
     #    self.numerador += other
     #    self.denominador += other
@@ -43,7 +43,7 @@ franc1 = franc(5,4)
 franc2 = franc(5,10)
 franc3 = franc(4,10)
 
-result = franc1 + franc2
+result_soma = franc1 + franc2
 #result2 = franction1 + franction2 + franction3
 result_mult = franc1 * franc2
 result_eq = franc1 == franc2
@@ -51,7 +51,7 @@ print(franc1)
 print(franc2)
 print(franc3)
 
-print(result)
+print(result_soma)
 #print(result2)
 print(result_mult)
 print(result_eq)
