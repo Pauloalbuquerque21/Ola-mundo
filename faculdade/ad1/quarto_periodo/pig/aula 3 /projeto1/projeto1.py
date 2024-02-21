@@ -6,6 +6,24 @@ class franc():
     
     def __str__(self):
         return f'{self.numerador}/{self.denominador}'
+    def mmc(self,valor1,valor2):
+        lista = list()
+        denominador1 = valor1
+        denominador2 = valor2
+        for c in range(2,10):
+            while True: #parte que pegamos os valores do mmc
+                if (denominador1 % c == 0) or (denominador2 % c == 0):
+                    if denominador1 % c == 0:
+                        denominador1 = denominador1 / c
+                    if denominador2 % c == 0:
+                        denominador2 = denominador2 / c
+                    lista.append(c)
+                else:
+                    break
+        mmc = 1
+        for dados in lista:#soma dos valores do mmc
+            mmc = mmc * dados
+            return mmc
 
     def __add__(self,other):#adição de franções
         lista = list()
@@ -40,8 +58,8 @@ class franc():
     def __eq__(self,other):
         return f'{self.numerador == other.numerador and self.denominador == other.denominador}'
 
-    #def __sub__(self,other):
-    #    return f'{self.numerador - other.numerador}'
+    def __sub__(self,other):
+        return f'{self.numerador - other.numerador}'
     
     
 franc1 = franc(5,4)
@@ -60,3 +78,4 @@ result_eq = franc1 == franc2
 print(result_soma)
 print(result_mult)
 print(result_eq)
+print(franc1.mmc(4,5))
