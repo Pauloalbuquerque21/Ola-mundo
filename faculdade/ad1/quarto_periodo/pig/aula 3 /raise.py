@@ -12,7 +12,6 @@ class matematica():
         return self.num / self.den
     
     
-
-resultado = matematica(a,b)
-
-print(resultado.dividir())
+try:
+    resultado = matematica(a,b)
+    print(resultado.dividir())
