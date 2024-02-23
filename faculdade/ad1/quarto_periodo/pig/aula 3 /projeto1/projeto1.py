@@ -55,11 +55,17 @@ class franc():
     def __mul__(self,other):
         print(f'{self.numerador},{other.numerador}')
         return f'{self.numerador * other.numerador}/{self.denominador * other.denominador}'
+    
     def __eq__(self,other):
         return f'{self.numerador == other.numerador and self.denominador == other.denominador}'
 
     def __sub__(self,other):
         return f'{self.numerador - other.numerador}'
+    
+    def __truediv__(self,other):
+        numerador_division = self.numerador * other.denominador
+        divisor_division = self.denominador *other.numerador
+        return numerador_division / divisor_division
     
     
 franc1 = franc(5,4)
@@ -74,8 +80,10 @@ result_soma = franc1 + franc2
 #result2 = franction1 + franction2 + franction3
 result_mult = franc1 * franc2
 result_eq = franc1 == franc2
+result_division = franc1 / franc2
 
-print(result_soma)
-print(result_mult)
-print(result_eq)
+print(f'soma: {result_soma}')
+print(f'multiplicação: {result_mult}')
+print(f'igualdade: {result_eq}')
+print(f'Divisão: {result_division}')
 print(franc1.mmc(4,5))
