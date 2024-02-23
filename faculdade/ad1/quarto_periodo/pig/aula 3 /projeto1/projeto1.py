@@ -6,7 +6,9 @@ class franc():
     
     def __str__(self):
         return f'{self.numerador}/{self.denominador}'
-    def mmc(self,valor1,valor2):
+    
+#Função para mmc
+    def mmc(valor1,valor2):
         lista = list()
         denominador1 = valor1
         denominador2 = valor2
@@ -23,27 +25,13 @@ class franc():
         mmc = 1
         for dados in lista:#soma dos valores do mmc
             mmc = mmc * dados
-            return mmc
-
-    def __add__(self,other):#adição de franções
-        lista = list()
-        denominador1 = self.denominador
-        denominador2 = other.denominador
+        return mmc
+    
+#Adição de franções
+    def __add__(self,other):
         numerador1 = 0 #criei essa variavel, pois não quero comprometer os valores do self.numerador e other
         numerador2 = 0
-        for c in range(2,10):
-            while True: #parte que pegamos os valores do mmc
-                if (denominador1 % c == 0) or (denominador2 % c == 0):
-                    if denominador1 % c == 0:
-                        denominador1 = denominador1 / c
-                    if denominador2 % c == 0:
-                        denominador2 = denominador2 / c
-                    lista.append(c)
-                else:
-                    break
-        mmc = 1
-        for dados in lista:#soma dos valores do mmc
-            mmc = mmc * dados
+        mmc = franc.mmc(self.denominador,other.denominador) 
         numerador1 = self.numerador * (mmc / self.denominador)
         numerador2 = other.numerador * (mmc / other.denominador)
         
@@ -52,6 +40,8 @@ class franc():
     #    self.numerador += other
     #    self.denominador += other
     #    return self
+
+#Função Multiplicação 
     def __mul__(self,other):
         print(f'{self.numerador},{other.numerador}')
         return f'{self.numerador * other.numerador}/{self.denominador * other.denominador}'
@@ -60,7 +50,12 @@ class franc():
         return f'{self.numerador == other.numerador and self.denominador == other.denominador}'
 
     def __sub__(self,other):
-        return f'{self.numerador - other.numerador}'
+        mmc = franc.mmc(self.denominador,other.denominador)
+        numerador_sub1 = self.numerador * (mmc / self.denominador)
+        numerador_sub2 = other.numerador * (mmc / other.denominador)
+        return f'{numerador_sub1 - numerador_sub2} / {mmc}'
+    
+
     
     def __truediv__(self,other):
         numerador_division = self.numerador * other.denominador
@@ -68,8 +63,8 @@ class franc():
         return numerador_division / divisor_division
     
     
-franc1 = franc(5,4)
-franc2 = franc(5,10)
+franc1 = franc(5,10)
+franc2 = franc(5,4)
 franc3 = franc(4,10)
 
 print(franc1)
@@ -81,9 +76,11 @@ result_soma = franc1 + franc2
 result_mult = franc1 * franc2
 result_eq = franc1 == franc2
 result_division = franc1 / franc2
+result_sub = franc1 - franc2
 
 print(f'soma: {result_soma}')
 print(f'multiplicação: {result_mult}')
 print(f'igualdade: {result_eq}')
 print(f'Divisão: {result_division}')
-print(franc1.mmc(4,5))
+print(f'MMC: {franc.mmc(4,5)}')
+print(f'Subtração: {result_sub}')
