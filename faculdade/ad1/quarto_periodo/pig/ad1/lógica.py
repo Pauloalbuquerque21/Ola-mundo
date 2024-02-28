@@ -12,6 +12,15 @@ for linhas in listas:#linhas
         while True:
             if len(lista_ale):
                 aleatorio1 = random.randirt(1,9)
+            else:
+                aleatorio1 = random.randirt(1,9)
+                if aleatorio1 in lista_ale:
+                     pass
+                else:
+                     lista_ale.append(aleatorio1)
+            if len(lista_ale) == 9:
+                 break
+                 
 
         for colunas in range(1,12):#colunas
 
