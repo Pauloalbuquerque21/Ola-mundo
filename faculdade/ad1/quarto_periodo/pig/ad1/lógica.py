@@ -5,8 +5,7 @@ lista_1 = list()
 lista_2 = list()
 
 clock = 0
-
-while True:
+while True: # PRIMEIRA LINHA 
     if len(lista_1) == 0:
         aleatorio1 = random.randint(1,9)
         lista_1.append(aleatorio1)
@@ -19,7 +18,7 @@ while True:
 
     if len(lista_1) == 9:
         break
-while True:
+while True: # SEGUNDA LINHA 
     if len(lista_2) == 0:
         aleatorio1 = random.randint(1,9)
         if aleatorio1 != lista_1[0]:
@@ -30,10 +29,11 @@ while True:
     else:
         aleatorio1 = random.randint(1,9)
         print(aleatorio1)
-        if (aleatorio1 not in lista_1) and (aleatorio1 != lista_1[len(lista_2)]):
-            lista_1.append(aleatorio1)
+        if (aleatorio1 not in lista_2) and (aleatorio1 != lista_1[len(lista_2)]):
+            lista_2.append(aleatorio1)
         else:
             print('já adicionado')
+        print(lista_2)
 
     if len(lista_2) == 9:
         break

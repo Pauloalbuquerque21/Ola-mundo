@@ -1,20 +1,44 @@
 import random
-lista_ale = list()
 
-while True:
-    if len(lista_ale) == 0:
-        aleatorio1 = random.randint(1,9)
-        lista_ale.append(aleatorio1)
-        print(aleatorio1)
+listas=[[],[],[],[],[],[],[],[],[]]
+lista_1 = list()
+lista_2 = list()
+
+for c in range(0,9):
+    if c == 0:
+        while True: # PRIMEIRA LINHA 
+            if len(listas[0]) == 0:
+                aleatorio1 = random.randint(1,9)
+                listas[0].append(aleatorio1)
+            else:
+                aleatorio1 = random.randint(1,9)
+                if aleatorio1 not in listas[0]:
+                    listas[0].append(aleatorio1)
+                else:
+                    print('já adicionado')
+
+            if len(listas[0]) == 9:
+                break
     else:
-        aleatorio1 = random.randint(1,9)
-        print(aleatorio1)
-        if aleatorio1 not in lista_ale:
-            lista_ale.append(aleatorio1)
-        else:
-            print('já adicionado')
+        while True: # SEGUNDA LINHA 
+            if len(listas[c]) == 0:
+                aleatorio1 = random.randint(1,9)
+                if aleatorio1 != listas[c-1][0]:
+                    listas[c].append(aleatorio1)
+                    print(aleatorio1)
+                else:
+                    print('termino')
+            else:
+                aleatorio1 = random.randint(1,9)
+                print(aleatorio1)
+                if (aleatorio1 not in listas[c]) and (aleatorio1 != listas[c-1][len(listas[c])-1]):
+                    listas[c].append(aleatorio1)
+                else:
+                    print('já adicionado')
 
-    if len(lista_ale) == 9:
-        break
+            if len(listas[c]) == 9:
+                break
 
-print(lista_ale)
+
+for c1 in listas:
+    print(c1)
