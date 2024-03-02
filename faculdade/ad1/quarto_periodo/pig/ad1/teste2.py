@@ -22,7 +22,8 @@ for c in range(0,9):
             quantidade += 1
             print(listas) 
             while True: # SEGUNDA LINHA
-                vezes = 0 
+                vezes = 0
+                vezes2 = 0 
                 if len(listas[c]) == 0:
                     aleatorio1 = random.randint(1,9)
                     #verificar se a listas anteriores no elemento posição 0 existe elemento igual: 
@@ -42,7 +43,10 @@ for c in range(0,9):
                 else:
                     aleatorio1 = random.randint(1,9)
                     print(aleatorio1)
-                    if (aleatorio1 not in listas[c]) and (aleatorio1 != listas[c-1][len(listas[c])]):
+                    for quant in range(quantidade-1,-1,-1):
+                        if (aleatorio1 not in listas[c]) and (aleatorio1 != listas[quant][len(listas[c])]):
+                            vezes2+=1
+                    if vezes2 == quantidade:
                         listas[c].append(aleatorio1)
                     else:
                         print('já adicionado')
