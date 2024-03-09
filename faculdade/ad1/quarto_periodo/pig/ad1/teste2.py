@@ -22,6 +22,7 @@ while True:#loop do jogo
     confere_inferior = 0
     confere_superior = 0
     confere_linha = 0
+    quadrado = 0
     # conferir se está na linha:
     if valor not in listas[linha]:
         confere_linha += 1
@@ -33,13 +34,69 @@ while True:#loop do jogo
     for superior in range(linha+1,9):
         if valor != listas[superior][coluna]:
             confere_superior += 1
+    #verificar os quadrados:
+    #quadrado 1        
+    if (linha <=2) and (coluna <=2):
+        for linha_verif in range(0,3):
+            for coluna_verif in range(0,3):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
     
-    if (confere_inferior == linha) and (confere_superior == (9-(linha+1))) and (confere_linha == 1):
+    #quadrado 2
+    elif (linha <= 2) and (3 <= coluna <=5):
+        for linha_verif in range(0,3):
+            for coluna_verif in range(3,6):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 3
+    elif (linha <=2) and (6<=coluna <=8):
+        for linha_verif in range(0,3):
+            for coluna_verif in range(6,9):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 4
+    elif (3<=linha <=5) and (coluna <=2):
+        for linha_verif in range(3,5):
+            for coluna_verif in range(0,3):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 5
+    elif (3<=linha <=5) and (3 <= coluna <=5):
+        for linha_verif in range(3,6):
+            for coluna_verif in range(3,6):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 6
+    elif (3<=linha <=5) and (6<=coluna <=8):
+        for linha_verif in range(3,6):
+            for coluna_verif in range(6,9):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 7
+    elif (6<=linha <=8) and (coluna <=2):
+        for linha_verif in range(6,9):
+            for coluna_verif in range(0,3):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 8
+    elif (6<=linha <=8) and (3 <= coluna <=5):
+        for linha_verif in range(6,9):
+            for coluna_verif in range(3,6):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     #quadrado 9
+    elif (6<=linha <=8) and (6<=coluna <=8):
+        for linha_verif in range(6,9):
+            for coluna_verif in range(6,9):
+                if valor == listas[linha_verif][coluna_verif]:
+                    quadrado += 1
+     
+
+    if (confere_inferior == linha) and (confere_superior == (9-(linha+1))) and (confere_linha == 1) and (quadrado == 0):
         jogadas += 1
         print(f'adicionou {valor}')
         listas[linha][coluna] = valor
-        if jogadas == 5:
-            break
+        
     else:
 
         print('já adicionado')
