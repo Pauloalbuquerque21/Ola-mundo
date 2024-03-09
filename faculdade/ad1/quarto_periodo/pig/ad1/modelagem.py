@@ -1,8 +1,6 @@
-lista = ['.', '.']
-resultado = ' '.join(lista)
-print(resultado)
-for c in range(len(lista)):
-    if isinstance(lista[c],str):
-        print('sim')
-    else:
-        print('não')
+def suduku_pricipal(self):
+        listas=[[],[],[],[],[],[],[],[],[]]
+        for c in range(0,9):
+            for c2 in range(0,9):
+                listas[c].append(".")
+        return listas
