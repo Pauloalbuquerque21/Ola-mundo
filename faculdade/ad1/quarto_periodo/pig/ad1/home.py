@@ -8,7 +8,7 @@ print(dificuldade)
 
 lista=dificuldade.suduku_pricipal()
 
-dificuldade.sudulu_usuario(lista)
+dificuldade.suduko_usuario(lista)
 
 print(dificuldade.detect())
 
