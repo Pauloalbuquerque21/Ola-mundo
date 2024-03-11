@@ -1,3 +1,4 @@
+import random
 class suduko():
     def __init__(self,difficult):
         self.difficult = difficult
@@ -11,17 +12,57 @@ class suduko():
                 listas[c].append(".")
         return listas
     
-    def suduko_usuario(self,listas):
+    def suduko_usuario(self,listas,dificuldade):
+        horinzontal = ['0','1','2','3','4','5','6','7','8']
+        vertical = [0,1,2,3,4,5,6,7,8]
+        etapa = 0
+        linha_maquina = 0
+        vezes = 0
+        valores_coluna = 0
+
         while True:#loop do jogo
             lista_visual = list()
 
-            for c in range(0,9):
-                lista_visual = ' '.join(listas[c])
-                print(lista_visual)
+            if  etapa == 0 :
+                if dificuldade == 0 :
+                    if valores_coluna == 4:
+                        valores_coluna = 0
+                        linha_maquina = linha_maquina + 1
+                    coluna = random.randint(0, 8)
+                    valor = str(random.randint(1,9))
+                    linha = linha_maquina
+                elif dificuldade == 1 :
+                    if valores_coluna == 3:
+                        valores_coluna = 0
+                        linha_maquina = linha_maquina + 1
+                    coluna = random.randint(0, 8)
+                    valor = str(random.randint(1,9))
+                    linha = linha_maquina
+                elif dificuldade == 2 :
+                    if valores_coluna == 2:
+                        valores_coluna = 0
+                        linha_maquina = linha_maquina + 1
+                    coluna = random.randint(0, 8)
+                    valor = str(random.randint(1,9))
+                    linha = linha_maquina
+                print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
+            else:
+                horizontal_visual = ' '.join(horinzontal)
 
-            linha = int(input('Digite a linha:'))
-            coluna = int(input('Digite a coluna:'))
-            valor = str(input('digite o valor '))
+                print(f'   {horizontal_visual}')
+                print('  ------------------')
+                for c in range(0,9):
+                    hozontal_ventical = ' '.join(horinzontal)
+                    lista_visual = ' '.join(listas[c])
+                    
+                    print(f'{vertical[c]}| {lista_visual}')
+                linha_usuario = int(input('Digite a linha:'))
+                coluna_usuario = int(input('Digite a coluna:'))
+                valor_usuario = str(input('digite o valor '))
+                linha = linha_usuario
+                coluna = linha_usuario
+                valor = valor_usuario
+
 
             #veriaveis:
             confere_inferior = 0
@@ -46,60 +87,83 @@ class suduko():
                     for coluna_verif in range(0,3):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-
+            
             #quadrado 2
             elif (linha <= 2) and (3 <= coluna <=5):
                 for linha_verif in range(0,3):
                     for coluna_verif in range(3,6):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 3
+            #quadrado 3
             elif (linha <=2) and (6<=coluna <=8):
                 for linha_verif in range(0,3):
                     for coluna_verif in range(6,9):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 4
+            #quadrado 4
             elif (3<=linha <=5) and (coluna <=2):
                 for linha_verif in range(3,5):
                     for coluna_verif in range(0,3):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 5
+            #quadrado 5
             elif (3<=linha <=5) and (3 <= coluna <=5):
                 for linha_verif in range(3,6):
                     for coluna_verif in range(3,6):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 6
+            #quadrado 6
             elif (3<=linha <=5) and (6<=coluna <=8):
                 for linha_verif in range(3,6):
                     for coluna_verif in range(6,9):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 7
+            #quadrado 7
             elif (6<=linha <=8) and (coluna <=2):
                 for linha_verif in range(6,9):
                     for coluna_verif in range(0,3):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 8
+            #quadrado 8
             elif (6<=linha <=8) and (3 <= coluna <=5):
                 for linha_verif in range(6,9):
                     for coluna_verif in range(3,6):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                #quadrado 9
+            #quadrado 9
             elif (6<=linha <=8) and (6<=coluna <=8):
                 for linha_verif in range(6,9):
                     for coluna_verif in range(6,9):
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
-                
+            
 
             if (confere_inferior == linha) and (confere_superior == (9-(linha+1))) and (confere_linha == 1) and (quadrado == 0):
                 print(f'adicionou {valor}')
                 listas[linha][coluna] = valor
+                if etapa == 0:
+                    vezes+=1
+                    valores_coluna +=1
+                    if dificuldade == 0:
+                        if vezes == 36:
+                            etapa+=1
+                    if dificuldade == 1:
+                        if vezes == 27:
+                            etapa+=1
+                    if dificuldade == 2:
+                        if vezes == 18:
+                            etapa+=1
+                for c in range(0,9):
+                    lista_visual = ' '.join(listas[c])
+                    print(lista_visual)
+                        
+
+            else:
+
+                print('já adicionado')
+
+
+
 
     def detect(self):
             result = 0
@@ -109,21 +173,21 @@ class suduko():
                     if letra1 == letra2 :
                          quant +=1
                 if quant == 5:
-                    result = 1
+                    result = 0
             if len(self.difficult) == len('medio'):#detectar se é medio
                 quant = 0
                 for letra1, letra2 in zip(self.difficult,'medio'):
                     if letra1 == letra2 :
                          quant +=1
                 if quant == 5:
-                    result = 2
+                    result = 1
             if len(self.difficult) == len('dificil'):#detectar se é difícil
                 quant = 0
                 for letra1, letra2 in zip(self.difficult,'dificil'):
                     if letra1 == letra2 :
                          quant +=1
                 if quant == 7:
-                    result = 3
+                    result = 0
                       
             return result        
 

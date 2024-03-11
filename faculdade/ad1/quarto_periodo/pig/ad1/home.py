@@ -7,8 +7,9 @@ dificuldade = suduko(str(input('Digite a Dificuldade, Sem acentuação[Facil,Med
 print(dificuldade)
 
 lista=dificuldade.suduku_pricipal()
+dificul = dificuldade.detect()
 
-dificuldade.suduko_usuario(lista)
+dificuldade.suduko_usuario(lista,dificul)
 
 print(dificuldade.detect())
 

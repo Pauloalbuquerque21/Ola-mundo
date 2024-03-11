@@ -1,6 +1,6 @@
 import random
 horinzontal = ['0','1','2','3','4','5','6','7','8']
-vertical = ['0','1','2','3','4','5','6','7','8']
+vertical = [0,1,2,3,4,5,6,7,8]
 listas=[[],[],[],[],[],[],[],[],[]]
 for c in range(0,9):
     for c2 in range(0,9):
@@ -42,14 +42,14 @@ while True:#loop do jogo
         print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
     else:
         horizontal_visual = ' '.join(horinzontal)
-        print(horizontal_visual)
-        for c2 in range(9,1,-1):
-            pass
+
+        print(f'   {horizontal_visual}')
+        print('  ------------------')
         for c in range(0,9):
             hozontal_ventical = ' '.join(horinzontal)
             lista_visual = ' '.join(listas[c])
-            vertical_visual = ' '.join(vertical)
-            print(f'{}{lista_visual}')
+            
+            print(f'{vertical[c]}| {lista_visual}')
         linha_usuario = int(input('Digite a linha:'))
         coluna_usuario = int(input('Digite a coluna:'))
         valor_usuario = str(input('digite o valor '))
