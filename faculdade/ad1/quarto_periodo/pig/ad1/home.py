@@ -5,10 +5,9 @@ print('-+'*20)
 
 dificuldade = suduko(str(input('Digite a Dificuldade, Sem acentuação[Facil,Medio e Dificil]:').strip().lower()))
 print(dificuldade)
-
 lista=dificuldade.suduku_pricipal()
 dificul = dificuldade.detect()
-
+print(dificul)
 dificuldade.suduko_usuario(lista,dificul)
 
 print(dificuldade.detect())

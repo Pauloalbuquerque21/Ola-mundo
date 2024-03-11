@@ -13,6 +13,7 @@ class suduko():
         return listas
     
     def suduko_usuario(self,listas,dificuldade):
+        erros = 0
         horinzontal = ['0','1','2','3','4','5','6','7','8']
         vertical = [0,1,2,3,4,5,6,7,8]
         etapa = 0
@@ -54,13 +55,12 @@ class suduko():
                 for c in range(0,9):
                     hozontal_ventical = ' '.join(horinzontal)
                     lista_visual = ' '.join(listas[c])
-                    
                     print(f'{vertical[c]}| {lista_visual}')
                 linha_usuario = int(input('Digite a linha:'))
                 coluna_usuario = int(input('Digite a coluna:'))
                 valor_usuario = str(input('digite o valor '))
                 linha = linha_usuario
-                coluna = linha_usuario
+                coluna = coluna_usuario
                 valor = valor_usuario
 
 
@@ -152,15 +152,14 @@ class suduko():
                             etapa+=1
                     if dificuldade == 2:
                         if vezes == 18:
-                            etapa+=1
-                for c in range(0,9):
-                    lista_visual = ' '.join(listas[c])
-                    print(lista_visual)
-                        
-
+                            etapa+=1     
             else:
 
-                print('já adicionado')
+                print('-------Jogada errada---------')
+                if etapa == 1:
+                    erros +=1
+                    if erros == 4:
+                        break
 
 
 
