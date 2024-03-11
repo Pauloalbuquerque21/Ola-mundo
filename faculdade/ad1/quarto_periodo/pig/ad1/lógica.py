@@ -1,5 +1,6 @@
 import random
-
+horinzontal = ['0','1','2','3','4','5','6','7','8']
+vertical = ['0','1','2','3','4','5','6','7','8']
 listas=[[],[],[],[],[],[],[],[],[]]
 for c in range(0,9):
     for c2 in range(0,9):
@@ -21,15 +22,34 @@ while True:#loop do jogo
             if valores_coluna == 4:
                 valores_coluna = 0
                 linha_maquina = linha_maquina + 1
-            
+            coluna = random.randint(0, 8)
+            valor = str(random.randint(1,9))
+            linha = linha_maquina
+        elif dificuldade == 1 :
+            if valores_coluna == 3:
+                valores_coluna = 0
+                linha_maquina = linha_maquina + 1
+            coluna = random.randint(0, 8)
+            valor = str(random.randint(1,9))
+            linha = linha_maquina
+        elif dificuldade == 2 :
+            if valores_coluna == 2:
+                valores_coluna = 0
+                linha_maquina = linha_maquina + 1
             coluna = random.randint(0, 8)
             valor = str(random.randint(1,9))
             linha = linha_maquina
         print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
     else:
+        horizontal_visual = ' '.join(horinzontal)
+        print(horizontal_visual)
+        for c2 in range(9,1,-1):
+            pass
         for c in range(0,9):
+            hozontal_ventical = ' '.join(horinzontal)
             lista_visual = ' '.join(listas[c])
-            print(lista_visual)
+            vertical_visual = ' '.join(vertical)
+            print(f'{}{lista_visual}')
         linha_usuario = int(input('Digite a linha:'))
         coluna_usuario = int(input('Digite a coluna:'))
         valor_usuario = str(input('digite o valor '))
@@ -121,7 +141,15 @@ while True:#loop do jogo
             if dificuldade == 0:
                 if vezes == 36:
                     etapa+=1
-
+            if dificuldade == 1:
+                if vezes == 27:
+                    etapa+=1
+            if dificuldade == 2:
+                if vezes == 18:
+                    etapa+=1
+        for c in range(0,9):
+            lista_visual = ' '.join(listas[c])
+            print(lista_visual)
                 
 
     else:
