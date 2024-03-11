@@ -5,17 +5,38 @@ for c in range(0,9):
     for c2 in range(0,9):
         listas[c].append(".")
 
+etapa = 0
+dificuldade = int(input('Difuculdade:'))
+linha_maquina = 0
+vezes_medio = 27
+vezes_dificil = 18
+vezes = 0
+valores_coluna = 0
 
 while True:#loop do jogo
     lista_visual = list()
 
-    for c in range(0,9):
-        lista_visual = ' '.join(listas[c])
-        print(lista_visual)
+    if  etapa == 0 :
+        if dificuldade == 0 :
+            if valores_coluna == 4:
+                valores_coluna = 0
+                linha_maquina = linha_maquina + 1
+            
+            coluna = random.randint(0, 8)
+            valor = str(random.randint(1,9))
+            linha = linha_maquina
+        print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
+    else:
+        for c in range(0,9):
+            lista_visual = ' '.join(listas[c])
+            print(lista_visual)
+        linha_usuario = int(input('Digite a linha:'))
+        coluna_usuario = int(input('Digite a coluna:'))
+        valor_usuario = str(input('digite o valor '))
+        linha = linha_usuario
+        coluna = linha_usuario
+        valor = valor_usuario
 
-    linha = int(input('Digite a linha:'))
-    coluna = int(input('Digite a coluna:'))
-    valor = str(input('digite o valor '))
 
     #veriaveis:
     confere_inferior = 0
@@ -94,6 +115,14 @@ while True:#loop do jogo
     if (confere_inferior == linha) and (confere_superior == (9-(linha+1))) and (confere_linha == 1) and (quadrado == 0):
         print(f'adicionou {valor}')
         listas[linha][coluna] = valor
+        if etapa == 0:
+            vezes+=1
+            valores_coluna +=1
+            if dificuldade == 0:
+                if vezes == 36:
+                    etapa+=1
+
+                
 
     else:
 
