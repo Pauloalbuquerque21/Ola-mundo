@@ -1,4 +1,5 @@
 import random
+import time
 horinzontal = ['0','1','2','3','4','5','6','7','8']
 vertical = [0,1,2,3,4,5,6,7,8]
 listas=[[],[],[],[],[],[],[],[],[]]
@@ -39,7 +40,6 @@ while True:#loop do jogo
             coluna = random.randint(0, 8)
             valor = str(random.randint(1,9))
             linha = linha_maquina
-        print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
     else:
         horizontal_visual = ' '.join(horinzontal)
 

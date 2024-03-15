@@ -21,10 +21,12 @@ class suduko():
         vezes = 0
         valores_coluna = 0
 
-        while True:#loop do jogo
-            lista_visual = list()
+        #loop do jogo:
+        while True:
 
-            if  etapa == 0 :
+            lista_visual = list()
+            #etapa que a maquina preenche as informações
+            if  etapa == 0 : 
                 if dificuldade == 0 :
                     if valores_coluna == 4:
                         valores_coluna = 0
@@ -46,7 +48,7 @@ class suduko():
                     coluna = random.randint(0, 8)
                     valor = str(random.randint(1,9))
                     linha = linha_maquina
-                print(f'Coluna:{coluna}, linha:{linha_maquina}, valor:{valor},valores_coluna:{valores_coluna}')
+            #etapa que o jogador começa preencher as informações
             else:
                 horizontal_visual = ' '.join(horinzontal)
 
@@ -56,6 +58,7 @@ class suduko():
                     hozontal_ventical = ' '.join(horinzontal)
                     lista_visual = ' '.join(listas[c])
                     print(f'{vertical[c]}| {lista_visual}')
+                #linha, coluna e valor que o usuário deseja
                 linha_usuario = int(input('Digite a linha:'))
                 coluna_usuario = int(input('Digite a coluna:'))
                 valor_usuario = str(input('digite o valor '))
@@ -137,9 +140,8 @@ class suduko():
                         if valor == listas[linha_verif][coluna_verif]:
                             quadrado += 1
             
-
+            #conferir se todas as verificões estão certas:
             if (confere_inferior == linha) and (confere_superior == (9-(linha+1))) and (confere_linha == 1) and (quadrado == 0):
-                print(f'adicionou {valor}')
                 listas[linha][coluna] = valor
                 if etapa == 0:
                     vezes+=1
@@ -152,7 +154,15 @@ class suduko():
                             etapa+=1
                     if dificuldade == 2:
                         if vezes == 18:
-                            etapa+=1     
+                            etapa+=1   
+                elif etapa == 1:
+                    resulta_suduko = 0
+                    for verif_list in range(0,8):
+                        for verif_col in range(0,8):
+                            if listas[verif_list][verif_col] != '.':
+                                resulta_suduko +=1
+                    print(f'resultado{resulta_suduko}')
+
             else:
 
                 print('-------Jogada errada---------')
@@ -166,27 +176,36 @@ class suduko():
 
     def detect(self):
             result = 0
-            if len(self.difficult) == len('facil'):#detectar se é facil
-                quant = 0
-                for letra1, letra2 in zip(self.difficult,'facil'):
-                    if letra1 == letra2 :
-                         quant +=1
-                if quant == 5:
-                    result = 0
-            if len(self.difficult) == len('medio'):#detectar se é medio
-                quant = 0
-                for letra1, letra2 in zip(self.difficult,'medio'):
-                    if letra1 == letra2 :
-                         quant +=1
-                if quant == 5:
-                    result = 1
-            if len(self.difficult) == len('dificil'):#detectar se é difícil
-                quant = 0
-                for letra1, letra2 in zip(self.difficult,'dificil'):
-                    if letra1 == letra2 :
-                         quant +=1
-                if quant == 7:
-                    result = 0
+            while True:
+                if (len(self.difficult) == len('facil')) and (self.difficult[0] == 'f'):#detectar se é facil
+                    quant = 0
+                    for letra1, letra2 in zip(self.difficult,'facil'):
+                        if letra1 == letra2 :
+                            quant +=1
+                    if quant == 5:
+                        result = 0
+                        break
+                elif len(self.difficult) == len('medio') and (self.difficult[0] == 'm'):#detectar se é medio
+                    quant = 0
+                    for letra1, letra2 in zip(self.difficult,'medio'):
+                        if letra1 == letra2 :
+                            quant +=1
+                    if quant == 5:
+                        result = 1
+                        break
+                    
+                elif len(self.difficult) == len('dificil'):#detectar se é difícil
+                    quant = 0
+                    for letra1, letra2 in zip(self.difficult,'dificil'):
+                        if letra1 == letra2 :
+                            quant +=1
+                    if quant == 7:
+                        result = 2
+                        break
+                else:
+                    print('Favor Digitar corretamente a dificuldade, lembrando sem a acenturação')
+                    self.difficult = str(input('Digite a Dificuldade, Sem acentuação[Facil,Medio e Dificil]:').strip().lower())
+                        
                       
             return result        
 

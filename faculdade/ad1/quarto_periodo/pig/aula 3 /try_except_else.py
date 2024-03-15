@@ -18,8 +18,6 @@ while True:
     try:
         a = int(input('Digite o primeiro número:'))
         customization(a)
-    except Erro as erro:
-        print(erro)
     except(ZeroDivisionError):
         print('Digitou número zero')
     else:
