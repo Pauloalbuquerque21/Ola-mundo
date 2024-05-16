@@ -49,6 +49,8 @@ class ControleArCondicionado(ControleRemoto):
     def marca(self):
         return "LG"
 
+# obs: CLasses abstratas não podem ser instânciadas.
+#controle = ControleRemoto()
 
 controle = ControleTV()
 controle.ligar()
