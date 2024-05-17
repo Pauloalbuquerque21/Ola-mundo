@@ -31,6 +31,13 @@ class conta_corrente(conta):
         self.limites = limites
         self.limites_saques=limites_saques
         super().__init__(**kw)
+    
+    def sacar(self,valor):
+        if valor < self._saldo and valor <= self.limites_saques:
+            self._saldo -= valor
+            return True
+        else:
+            return False
         
 
 
@@ -48,4 +55,5 @@ print(cliente.saldo2())
 print('Cliente 2:')
 cliente2 = conta_corrente(limites=1000,limites_saques=100,saldo=200,numero=1,agencia=3,cliente='Paulo',historico=1)
 cliente2.novo_cliente()
+print(cliente2.sacar(101))
 
