@@ -10,7 +10,7 @@ class Animal:
 #Class filho que herda os atributos da class pai Animal
 class Mamifero(Animal):
     #Esse **kw serve para você não precisar digitar todos os argumentos
-    def __init__(self, cor_pelo, **kw):
+    def __init__(self, cor_pelo,    **kw):
         self.cor_pelo = cor_pelo
         #você pode usar esse super para os atributos da instâncias
         super().__init__(**kw)
